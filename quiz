@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<ctype.h>
+int main(int argc, char const *argv[])
+{
+    char guess;
+    int score=0;
+
+    char questions[][1000]={"1.Ordinary table salt is sodium chloride. What is baking soda?:",
+    "2. Ozone hole refers to:",
+    "3.Pollination is best defined as: "};
+
+char options[][1000]= {"A.POTASSIUM CHLORIDE","B.POTASSIUM CARBONATE","C.POTASSIUM HYDROXIDE","SODIUM BICARBONATE",
+                        "A.HOLE IN OZONE LAYER","B.DECRESE IN THE OZONE LAYER IN TROPOSPHERE","C.DECRESE IN THIKNESS OF OZONE LAYER IN STRATOSPHERE","D.INCRESE IN THE THICKNESS OF OZONE LAYER IN TROPOSPHERE",
+                        "A.TRANSFER OF POLLEN FROM ANTHERE TO STIGMA","B.GERMINATION OF POLLEN GRAINS","C.GROWTH OF POLLEN TUBE IN OVULE","D.VISITING FLOWER BY INSECTS"};
+
+                        char answers[3]={'D','C','A'};
+
+int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
+
+
+
+printf("WELCOME\n");
+printf("_______\n\n");
+printf("QUIZ GAME\n");
+printf("---------\n\n");
+
+for (int i = 0; i < numberOfQuestions; i++)
+{
+     printf("----------------------\n");
+    printf("%s\n",questions[i]);
+    printf("***********************\n");
+
+    
+
+    for (int j = (i*4); j < (i*4) +4; j++)
+    {
+        printf("%s\n",options[j]);
+    }
+
+    printf("enter your answer: \n");
+    scanf("%c",&guess);
+    scanf("%c");
+
+    guess = toupper(guess);
+
+    if (guess == answers[i])
+    
+    {
+        printf("coreect!!\n");
+        score++;
+    } else{
+        printf("wrong!!\n");
+    }
+    
+    
+}
+printf("FINALE SCORE: %d/%d\n",score,numberOfQuestions);
+
+
+
+    return 0;
+}
